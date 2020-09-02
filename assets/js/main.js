@@ -7,6 +7,17 @@ let workPic1 = document.getElementById("work-pic1");
 let workPic2 = document.querySelector("#work-pic2");
 let workPic3 = document.querySelector("#work-pic3");
 
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  links.forEach(link => {
+    link.classList.toggle("fade");
+  });
+});
+
 function stickyHeader() {
   if (window.pageYOffset > 10) {
     navbar.classList.add("sticky");
@@ -30,32 +41,17 @@ let tl_3 = TweenLite.to('.work-pic-3', 1, {
 }).reversed(true);
 
 workPic1.addEventListener('click', () => {
-  console.log('1')
   toggleAnimation(tl_1,1)
 });
 workPic2.addEventListener('click', () => {
-  console.log('2')
   toggleAnimation(tl_2,2)
 });
 workPic3.addEventListener('click', () => {
-  console.log('3')
   toggleAnimation(tl_3,3)
 });
 
-
-
 gsap.registerPlugin(ScrollTrigger);
-// gsap.defaults({ ease: 'none', duration: 2 });
-
-// const tl = gsap.timeline();
-// tl.from(".work2", { yPercent: 100 })
-// .from(".work3", { yPercent: 100 });
-// // .from(".work1", { xPercent: -100 });
-
-
-
 gsap.utils.toArray('.works').forEach((work,i)=>{
-  console.log(i)
   ScrollTrigger.create({
     trigger:work,
     start:"top 15%", 
@@ -63,26 +59,36 @@ gsap.utils.toArray('.works').forEach((work,i)=>{
     pinSpacing:false,
     pin:true,
     end:"bottom bottom",
-    onLeave:()=>console.log('leave'),
+    onEnter:()=>{
+      $(`.work-dots`).show();
+      $(`.dot${i+1}`).addClass('active');
+    
+    },
+    onLeave:()=>{$(`.work-dots`).hide()},
     
   })
 })
-// ScrollTrigger.create({
-//   animation: tl,
-//   trigger: '.works',
-//   start: 'top 25%',
-//   end:"+=3000",
-//   scrub: 3,
-//   onLeave:()=>console.log('leave'),
-//   pinSpacing:true,
-//   pin: true,
-//   // anticipatePin: 1
-// })
 
-// Hover effect on work exp
-// $('#work-exp-1-dot').hover(()=>{
-//   $('.work-exp-1').toggle();
-// })
-// let workExpTl = gsap.timeline();
-// workExpTl.from(".work-exp-1-group",2, { opacity: 0 ,ease:Circ.easeOut});
-// workExpTl.reversed( !myAnimation.reversed() )
+$(".my_work").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".works-container").offset().top
+  }, 2000);
+});
+
+$(".about_me").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".about").offset().top
+  }, 2000);
+});
+
+$(".contact_me").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".contact").offset().top
+  }, 2000);
+});
+
+$("#website_logo").click(function() {
+  $('html, body').animate({
+      scrollTop: 0
+  }, 2000);
+});
