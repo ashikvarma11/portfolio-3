@@ -2,6 +2,7 @@
 window.onscroll = function () { stickyHeader() };
 $("div.work-desc").hide();
 let navbar = document.getElementById("navbar");
+let mobile_nav = document.getElementById("mobile-nav");
 let sticky = navbar.offsetTop;
 let workPic1 = document.getElementById("work-pic1");
 let workPic2 = document.querySelector("#work-pic2");
@@ -11,18 +12,26 @@ const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
 
-hamburger.addEventListener("click", () => {
+const hamburger_lines = document.querySelectorAll(".hamburger .line");
+
+hamburger.addEventListener("click", toggleMobileMenu);
+
+function toggleMobileMenu() {
   navLinks.classList.toggle("open");
+  hamburger_lines.forEach(line=>line.classList.toggle("white_lines"));
   links.forEach(link => {
     link.classList.toggle("fade");
   });
-});
+}
 
 function stickyHeader() {
+  
   if (window.pageYOffset > 10) {
     navbar.classList.add("sticky");
+    mobile_nav.classList.add("sticky");
   } else {
     navbar.classList.remove("sticky");
+    mobile_nav.classList.remove("sticky");
   }
 }
 
@@ -70,18 +79,21 @@ gsap.utils.toArray('.works').forEach((work,i)=>{
 })
 
 $(".my_work").click(function() {
+  toggleMobileMenu();
   $('html, body').animate({
       scrollTop: $(".works-container").offset().top
   }, 2000);
 });
 
 $(".about_me").click(function() {
+  toggleMobileMenu();
   $('html, body').animate({
       scrollTop: $(".about").offset().top
   }, 2000);
 });
 
 $(".contact_me").click(function() {
+  toggleMobileMenu();
   $('html, body').animate({
       scrollTop: $(".contact").offset().top
   }, 2000);
