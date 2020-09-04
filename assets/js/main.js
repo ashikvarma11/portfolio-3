@@ -11,6 +11,7 @@ let workPic3 = document.querySelector("#work-pic3");
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
+let clickExpandH1 = document.querySelectorAll(".work-pic h1");
 
 const hamburger_lines = document.querySelectorAll(".hamburger .line");
 

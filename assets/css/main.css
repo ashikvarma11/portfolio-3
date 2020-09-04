@@ -41,16 +41,20 @@ nav {
     justify-content: space-between;
     position: fixed;
     top: 0;
-    width: 85%;
+    left:0;
+    width: 100%;
     z-index: 1;
 }
 
+.logo {
+margin-left:7em
+}
 .nav_links {
     display: flex;
     padding: 1.5em;
     align-items: center;
     width: 25%;
-    margin-right: 4em;
+    margin-right: 10em;
     justify-content: space-between;
 }
 
@@ -204,6 +208,15 @@ nav {
     cursor: pointer;
 }
 
+.work-pic h1 {
+    margin: 10em auto;
+    width: 20%;
+    border: 4px solid #fff;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    opacity: 0.3;
+}
 .work-pic img {
     width: 100%;
     overflow: hidden;
@@ -257,21 +270,21 @@ nav {
 }
 
 .work-pic-1 {
-    background-image: url('../images/flappy.png');
+    background-image: linear-gradient(to bottom, rgba(41, 41, 43, 0.8),rgba(41, 41, 43, 0.73)),url('../images/flappy.png');
 }
 
 .work-pic-2 {
-    background-image: url('../images/chat-farm.png');
+    background-image:linear-gradient(to bottom, rgba(41, 41, 43, 0.8),rgba(41, 41, 43, 0.73)), url('../images/chat-farm.png');
 }
 
 .work-pic-3 {
-    background-image: url('../images/work-4.jpg');
+    background-image:linear-gradient(to bottom, rgba(41, 41, 43, 0.8),rgba(41, 41, 43, 0.73)), url('../images/work-4.jpg');
 }
 
 /* About page */
 
 .about {
-    height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -336,9 +349,8 @@ nav {
     font-family: inherit;
     cursor: pointer;
     text-align: center;
-    position: absolute;
-    right: 0;
-    margin-top: 5em;
+    float: right;
+    margin: 5em 0;
 }
 
 /* Contact Me */
@@ -536,6 +548,12 @@ nav {
         flex-direction: row;
         margin-top: 10em;
     }
+    .landing-social>div>img {
+        width: 5em;
+        border: 3px solid #292929;
+        border-radius: 50%;
+        cursor: pointer;
+    }
     .section-head-mob {
         display: block;
         margin: 2em 0;
@@ -671,7 +689,7 @@ nav {
         margin-top: 2em;
     }
     .work-exp-btns {
-        right: 30%;
+        margin: 0 auto;
         font-size: 1.3rem;
         width: 30%;
         margin-top: -5em;
@@ -686,11 +704,16 @@ nav {
         flex-direction: column;
         height: auto;
     }
+    
+   
     .main-text h2 {
         font-size: 2rem;
     }
     .contact-text {
         width: 100%;
+    }
+    .contact-text .main-text {
+        margin-top:0em;
     }
     .contact-form-section {
         width: 100%;
@@ -705,6 +728,15 @@ nav {
     .info_details {
         font-size: 1.5rem;
     }
+    .input-label {
+        font-size:1.4rem;
+    }
+
+    .contact-form-section form {
+        margin: 0 auto;
+    }
+
+
     /* Mobile view of Works Page */
     .works-container {
         display: none;
@@ -731,6 +763,24 @@ nav {
     .work-pic {
         height: 50%;
     }
+
+    .work-pic h1 {
+        display: none;
+    }
+
+    .work-pic-1 {
+        background-image:url('../images/flappy.png');
+    }
+    
+    .work-pic-2 {
+        background-image:url('../images/chat-farm.png');
+    }
+    
+    .work-pic-3 {
+        background-image:url('../images/work-4.jpg');
+    }
+
+
     .works-mob {
         display: flex;
         /* change here */
