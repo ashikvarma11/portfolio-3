@@ -12,7 +12,6 @@ const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
 let clickExpandH1 = document.querySelectorAll(".work-pic h1");
-
 const hamburger_lines = document.querySelectorAll(".hamburger .line");
 
 hamburger.addEventListener("click", toggleMobileMenu);
@@ -100,7 +99,18 @@ $(".contact_me").click(function() {
   }, 2000);
 });
 
-$("#website_logo").click(function() {
+$("#my_work_btn").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".works-container").offset().top
+  }, 2000);
+});
+
+$("#contact_me_btn").click(function() {
+  $('html, body').animate({
+      scrollTop: $(".contact").offset().top
+  }, 2000);
+});
+$(".website_logo").click(function() {
   $('html, body').animate({
       scrollTop: 0
   }, 2000);

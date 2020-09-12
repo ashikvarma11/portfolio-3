@@ -8,14 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
-    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/main.css'>
+    <link rel="stylesheet/less" type="text/css" href="assets/css/main.scss" />
+    <script src="//cdn.jsdelivr.net/npm/less" ></script>
 </head>
 
 <body>
     <div class="wrapper">
         <nav id="mobile-nav">
             <div class="logo">
-                <span><a id="website_logo">ASHIK VARMA</a></span>
+                <span><a class="website_logo">ASHIK VARMA</a></span>
             </div>
             <div class="hamburger">
               <div class="line"></div>
@@ -31,7 +32,7 @@
         <div class="container">
             <nav id="navbar">
                 <div class="logo">
-                    <span><a id="website_logo">ASHIK VARMA</a></span>
+                    <span><a class="website_logo">ASHIK VARMA</a></span>
                 </div>
                 <ul class="nav_links">
                     <li><a class="my_work">WORKS</a></li>
@@ -47,14 +48,14 @@
                     <div class="main-text">Building Amazing Websites 24x7</div>
                     <div class="sub-text">Give your customers the experience they deserve.</div>
                     <div class="landing-btns">
-                        <button class="primary-btn my_work">MY WORKS</button>
-                        <button class="secondary-btn contact_me">CONTACT</button>
+                        <button id="my_work_btn" class="primary-btn">MY WORKS</button>
+                        <button id="contact_me_btn" class="secondary-btn">CONTACT</button>
                     </div>
                 </div>
                 <div class="landing-social">
-                    <div><img src="./assets/images/facebook.png" /></div>
-                    <div><img src="./assets/images/github.png" /></div>
-                    <div><img src="./assets/images/linkedin.png" /></div>
+                    <div><a href="https://www.facebook.com/ashik.varma/" target="_blank"><img src="./assets/images/facebook.png" /></a></div>
+                    <div><a href="https://github.com/ashikvarma11" target="_blank"><img src="./assets/images/github.png" /></a></div>
+                    <div><a href="https://www.linkedin.com/in/ashik-varma-a-49837a142" target="_blank"><img src="./assets/images/linkedin.png" /></a></div>
                     <div class="scroll-text"><span>SCROLL</span>
                         <svg width="27" height="44" viewBox="0 0 27 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.5 0V40" stroke="#292929" stroke-width="3" />
@@ -77,11 +78,13 @@
                                 <h1>CLICK TO EXPAND</h1>
                             </div>
                             <div class="work-desc work-desc1">
-                                <div class="work-desc-text">A flappy-bird clone built on p5.js. 
+                                <div class="work-desc-text">
+                                    <h1>FLAPPY GAME</h1>
+                                    A flappy-bird clone built on p5.js. Score as much as you can manouvering through the gaps between the pipes.
                                    </div>
                                 <div class="work-desc-btns">
-                                    <button class="primary-btn">VIEW PROJECT</button>
-                                    <button class="secondary-btn">VIEW GITHUB</button>
+                                    <button class="primary-btn"><a href="https://new-flappy.netlify.app" target="_blank">VIEW PROJECT</a></button>
+                                    <button class="secondary-btn"><a href="https://github.com/ashikvarma11/flappy_bird" target="_blank">VIEW GITHUB</a></button>
                                 </div>
                             </div>
 
@@ -92,10 +95,12 @@
                                 <h1>CLICK TO EXPAND</h1>
                             </div>
                             <div class="work-desc work-desc2">
-                                <div class="work-desc-text">A Real-time chat application using Socket.io. I started working on this side project to familiarize implementation of Socket.io library in Node JS. I used React for the front-end. No Databases are used. Group chatting functionality is implemented.</div>
+                                <div class="work-desc-text">
+                                    <h1>CHAT FARM</h1>
+                                    A Real-time chat application using Socket.io. I started working on this side project to familiarize implementation of Socket.io library in Node JS. I used React for the front-end. No Databases are used. Group chatting functionality is implemented.</div>
                                 <div class="work-desc-btns">
-                                    <button class="primary-btn">VIEW PROJECT</button>
-                                    <button class="secondary-btn">VIEW GITHUB</button>
+                                    <button class="primary-btn"><a href="https://chat-farm.netlify.app" target="_blank">VIEW PROJECT</a></button>
+                                    <button class="secondary-btn"><a href="https://github.com/ashikvarma11/chat-farm-fe" target="_blank">VIEW GITHUB</a></button>
                                 </div>
                             </div>
 
@@ -106,22 +111,12 @@
                                 <h1>CLICK TO EXPAND</h1>
                             </div>
                             <div class="work-desc work-desc3">
-                                <div class="work-desc-text">Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s,
-                                    when
-                                    an unknown printer took a galley of type and scrambled it to make a type specimen
-                                    book.
-                                    It
-                                    has survived not only five centuries, but also the leap into electronic typesetting,
-                                    remaining essentially unchanged. It was popularised in the 1960s with the release of
-                                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                                    publishing
-                                    software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                                <div class="work-desc-text">
+                                    <h1>SNAKE GAME</h1>
+                                    A classic Snake-game built using React JS. Added in some functionalities of score booster and poison. Booster gives additional 4 points, poison reduces 1 point. Game ends when snake hits itself or try going in reverse. Scaled the canvas to fit the screen. </div>
                                 <div class="work-desc-btns">
-                                    <button class="primary-btn">VIEW PROJECT</button>
-                                    <button class="secondary-btn">VIEW GITHUB</button>
+                                    <button class="primary-btn"><a href="https://game-snake-react.netlify.app">VIEW PROJECT</a></button>
+                                    <button class="secondary-btn"><a href="https://github.com/ashikvarma11/snake-game" target="_blank">VIEW GITHUB</a></button>
                                 </div>
                             </div>
                         </div>
@@ -143,11 +138,13 @@
                             <div class="work-pic work-pic-1" id="work-pic1">
                             </div>
                             <div class="work-desc work-desc1">
-                                <div class="work-desc-text">A flappy-bird clone built on p5.js. 
+                                <div class="work-desc-text">
+                                    <h1>FLAPPY GAME</h1>
+                                    A flappy-bird clone built on p5.js. Score as much as you can manouvering through the gaps between the pipes.
                                    </div>
                                 <div class="work-desc-btns">
-                                    <button class="primary-btn">VIEW PROJECT</button>
-                                    <button class="secondary-btn">VIEW GITHUB</button>
+                                    <button class="primary-btn"><a href="https://new-flappy.netlify.app" target="_blank">VIEW PROJECT</a></button>
+                                    <button class="secondary-btn"><a href="https://github.com/ashikvarma11/flappy_bird" target="_blank">VIEW GITHUB</a></button>
                                 </div>
                             </div>
                         </div>
@@ -155,19 +152,13 @@
                             <div class="work-pic work-pic-2" id="work-pic2">
                             </div>
                             <div class="work-desc work-desc2">
-                                <div class="work-desc-text">Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s,
-                                    when
-                                    an unknown printer took a galley of type and scrambled it to make a type specimen
-                                    book.
-                                    It
-                                    has survived not only five centuries, but also the leap into electronic typesetting,
-                                    </div>
+                                <div class="work-desc-text">
+                                    <h1>CHAT FARM</h1>
+                                    A Real-time chat application using Socket.io. I started working on this side project to familiarize implementation of Socket.io library in Node JS. I used React for the front-end. No Databases are used. Group chatting functionality is implemented.
+                                </div>
                                 <div class="work-desc-btns">
-                                    <button class="primary-btn">VIEW PROJECT</button>
-                                    <button class="secondary-btn">VIEW GITHUB</button>
+                                    <button class="primary-btn"><a href="https://chat-farm.netlify.app" target="_blank">VIEW PROJECT</a></button>
+                                    <button class="secondary-btn"><a href="https://github.com/ashikvarma11/chat-farm-fe" target="_blank">VIEW GITHUB</a></button>
                                 </div>
                             </div>
 
@@ -177,20 +168,13 @@
                             <div class="work-pic work-pic-3" id="work-pic3">
                             </div>
                             <div class="work-desc work-desc3">
-                                <div class="work-desc-text">Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s,
-                                    when
-                                    an unknown printer took a galley of type and scrambled it to make a type specimen
-                                    book.
-                                    It
-                                    has survived not only five centuries, but also the leap into electronic typesetting,
-                                    remaining essentially unchanged. It was popularised in the 1960s with the release of
-                                   </div>
+                                <div class="work-desc-text">
+                                    <h1>SNAKE GAME</h1>
+                                    A classic Snake-game built using React JS. Added in some functionalities of score booster and poison. Booster gives additional 4 points, poison reduces 1 point. Game ends when snake hits itself or try going in reverse. Scaled the canvas to fit the screen.
+                                 </div>
                                 <div class="work-desc-btns">
-                                    <button class="primary-btn">VIEW PROJECT</button>
-                                    <button class="secondary-btn">VIEW GITHUB</button>
+                                    <button class="primary-btn"><a href="https://game-snake-react.netlify.app">VIEW PROJECT</a></button>
+                                    <button class="secondary-btn"><a href="https://github.com/ashikvarma11/snake-game" target="_blank">VIEW GITHUB</a></button>
                                 </div>
                             </div>
                         </div>
@@ -265,12 +249,12 @@
                                 fill="white" />
                         </svg>
                         <div class="work-exp-btns primary-btn">
-                            VIEW RESUME
+                           <a href="./assets/docs/resume.pdf" download> VIEW RESUME </a> 
                         </div>
                     </div>
                     <div class="work-exp-mob">
                        <div class="work-exp-btns primary-btn">
-                            VIEW RESUME
+                        <a href="./assets/docs/resume.pdf" download> VIEW RESUME </a>
                         </div>
                         <h1>EXPERIENCE</h1>
                         <svg id="work-exp-chart" width="300" height="300" viewBox="0 0 180 346" fill="none" xmlns="http://www.w3.org/2000/svg">
